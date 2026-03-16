@@ -2,74 +2,62 @@
 
 Outcome OS is a personal operating system for disciplined execution.
 
-The production application is private.
-
-Live system:
+Production SaaS  
 https://outcomes.crouchdevelopment.com
 
 ![Outcome OS Command Center](screenshots/command-center.png)
 
 ---
 
-## Overview
+## What is Outcome OS?
 
-Outcome OS helps operators structure their life and work through:
+Outcome OS is a personal operating system designed to help operators focus on executing the work that actually produces outcomes.
 
-- goals
+Most task managers focus on storing tasks.
+
+Outcome OS focuses on:
+
+- disciplined execution
+- structured review loops
+- goal-aligned work
+- continuous improvement
+
+The system helps individuals operate with clarity, focus, and feedback-driven execution.
+
+---
+
+## Core Execution System
+
+Outcome OS is built around a simple execution loop:
+
+1. Capture work quickly  
+2. Identify the **Top 3 priorities**  
+3. Execute the day intentionally  
+4. Perform a nightly review  
+5. Track insights and improvement
+
+This loop creates a continuous system for disciplined operators.
+
+---
+
+## Key Capabilities
+
+Outcome OS supports structured execution through:
+
+- goal alignment
 - daily execution
 - weekly planning
 - nightly review
-- feedback loops
+- insights and feedback loops
 
 ---
 
-## Technology Stack
+## System Architecture
 
-Next.js  
-Supabase  
-Stripe  
-PostgreSQL  
-Vercel  
-
----
-
-## Architecture
-
-See:
-
-docs/architecture.md
-
----
-
-## Execution Model
-
-See:
-
-docs/execution-model.md
-
----
-
-## Screenshots
-
-
-![Outcome OS Command Center](screenshots/command-center.png)
-
-Examples:
-
-Command Center  
-Daily Review  
-Insights Dashboard  
-
----
-
-## Status
-
-Production SaaS  
-Source code private
-
----
-
-Built by Bryan Crouch
-
-https://crouchdevelopment.com
-Architecture and system documentation for Outcome OS
+```mermaid
+graph TD
+User --> NextJS
+NextJS --> Supabase
+NextJS --> Stripe
+NextJS --> Analytics
+Supabase --> PostgreSQL
