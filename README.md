@@ -49,9 +49,8 @@ docs/execution-model.md
 
 ## Screenshots
 
-Add product screenshots inside:
 
-screenshots/
+![Outcome OS Command Center](screenshots/command-center.png)
 
 Examples:
 
