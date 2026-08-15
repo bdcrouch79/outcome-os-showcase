@@ -1,23 +1,35 @@
-# Architecture
+# Outcomes OS Architecture
 
-Outcome OS uses a modern web application architecture centered on a Next.js frontend and a managed backend stack. The user interacts with the application through a responsive web interface built in Next.js. Application state, authentication, and structured product data are supported through Supabase and PostgreSQL. Billing and subscription workflows are handled through Stripe, while analytics systems capture product usage and behavioral signals for insight generation.
+Outcomes OS is a production web application built around a modern managed stack. The architecture supports authenticated execution workflows, durable user data, subscriptions, behavioral signals, analytics, and guided review.
 
-This public repository intentionally documents the system at a high level only. It is meant to communicate architectural shape and platform choices without exposing any private implementation details from the production application.
+This showcase intentionally documents the platform at a high level. Private implementation details, secrets, database targets, and production controls remain in the authoritative application repository and verified infrastructure.
 
-## High-Level Components
+## Public product boundary
 
-- Next.js powers the application interface and server-side rendering workflows.
-- Supabase supports authentication, database access patterns, and backend services.
-- Stripe manages payments, subscriptions, and commercial flows.
-- Analytics services support usage visibility, trends, and performance feedback.
-- PostgreSQL serves as the durable data layer behind the system.
+- [outcomesos.com](https://outcomesos.com) owns public positioning, education, SEO, and conversion.
+- [app.outcomesos.com](https://app.outcomesos.com) owns authentication and the product experience.
+- The authenticated application deploys from GitHub through Vercel.
+- Cloudflare provides DNS and edge services for the custom domain.
 
-## Mermaid Diagram
+## High-level components
+
+- **Next.js App Router** provides the application interface and server workflows.
+- **TypeScript and React** support the user experience and product logic.
+- **Supabase** provides authentication and managed backend services.
+- **PostgreSQL** stores durable product and execution data.
+- **Stripe** manages subscription and billing workflows.
+- **Analytics and behavioral signals** support product learning and execution insights.
+- **Vercel** runs the production application.
+- **Cloudflare** manages the custom-domain edge layer.
+
+## High-level flow
 
 ```mermaid
-graph TD
-    User --> NextJS
-    NextJS --> Supabase
-    NextJS --> Stripe
-    NextJS --> Analytics
+flowchart TD
+    User["User"] --> Web["Outcomes OS"]
+    Web --> Data["Supabase + PostgreSQL"]
+    Web --> Billing["Stripe"]
+    Web --> Signals["Analytics + Signals"]
 ```
+
+Provider identity and infrastructure ownership must be verified directly before any production change. Edge response headers alone do not establish the application origin.
